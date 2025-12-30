@@ -1,0 +1,31 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: defi-vault-cloud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: defi-vault-cloud
+  template:
+    metadata:
+      labels:
+        app: defi-vault-cloud
+    spec:
+      containers:
+        - name: orchestrator
+          image: ghcr.io/your-org/defi-vault-cloud:latest
+          command: ["python","-m","offchain.orchestrator_service"]
+          env:
+            - name: SIM_TICK_SECONDS
+              value: "10"
+            - name: RISK_Z_THRESHOLD
+              value: "3.0"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

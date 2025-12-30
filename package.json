@@ -1,0 +1,10 @@
+{
+  "name": "defi-vault-cloud-sim",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "lint": "echo \"(placeholder)\"",
+    "test": "echo \"(placeholder)\""
+  }
+}

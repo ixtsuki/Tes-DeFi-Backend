@@ -1,0 +1,11 @@
+
+
+Rules:
+  - name: HighZscoreAlert
+    description: "Alert when z-score exceeds threshold for > N ticks"
+    target: Slack/Webhook/Email
+    threshold: 3.0
+  - name: ExcessLiquidations
+    description: "Too many liquidations in a time window"
+    target: PagerDuty
+    threshold: 5
